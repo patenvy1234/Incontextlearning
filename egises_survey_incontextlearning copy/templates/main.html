@@ -1,0 +1,401 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='mystyle.css') }}">
+        <title>Survey</title>
+    </head>
+    <body>
+    <div class="ctrlqFormContentWrapper">
+        <div class="ctrlqHeaderMast">
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="{{ url_for('static',filename='logo2.jpg') }}" alt="DA-IICT logo">
+            </div>
+
+        </div>
+        <div class="ctrlqCenteredContent">
+            <div class="ctrlqFormCard">
+                <div class="ctrlqAccent"></div>
+                <div class="ctrlqFormContent">
+
+                    <form action="/surveys/incontext_learning" method='POST'>
+                         <div>
+        <label for="doc_id">Doc ID:</label>
+        <input type="text" id="doc_id" name="doc_id" value="{{ doc_id }}" readonly>
+    </div>
+
+    <div>
+        <label for="user1">User 1:</label>
+        <input type="text" id="user1" name="user1" value="{{ user1 }}" readonly>
+    </div>
+
+    <div>
+        <label for="user2">User 2:</label>
+        <input type="text" id="user2" name="user2" value="{{ user2 }}" readonly>
+    </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <h4>Evaluation Metric Correlation Survey
+                                </h4>
+                                <p> You are supposed to rate the sentence pair based on <i>similarity</i>.
+                                    <br> <strong>The meaning of each score is given below.</strong>
+                                    <br> <u>1: Almost different, 2: Very dissimilar, 3: Somewhat dissimilar, 4: Somewhat
+                                        similar, 5: Very similar, 6: Almost same </u></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="name" name="name" type="text" class="validate" data-error="#e1">
+                                <label for="name">Your Name (optional)</label>
+                                <div id="e1"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>Your gender:</p>
+                                <input name="gender" type="radio" id="male" value="male" required>
+                                <label for='male'>Male</label>
+                                <input name="gender" type="radio" id="female" value="female" required>
+                                <label for='female'>Female</label>
+                                <input name="gender" type="radio" id="transgender" value="transgender" required>
+                                <label for='transgender'>Transgender</label>
+                                <input name="gender" type="radio" id="nopref" value="nopref" required>
+                                <label for='nopref'>Prefer not to say</label>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>Your occupation:</p>
+                                <input name="occupation" type="radio" id="ugrad_student" value="ugrad_student" required>
+                                <label for="ugrad_student">Undergrad student</label>
+                                <input name="occupation" type="radio" id="grad_student" value="grad_student" required>
+                                <label for="grad_student">Grad student</label>
+                                <input name="occupation" type="radio" id="teacher" value="teacher" required>
+                                <label for='teacher'>Teacher</label>
+                                <input name="occupation" type="radio" id="corporate_professional"
+                                       value="corporate_professional" required>
+                                <label for='corporate_professional'>Corporate Professional</label>
+                                <input name="occupation" type="radio" id="other" value="other" required>
+                                <label for='other'>Other</label>
+
+
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p for='1'><i>Sentence 1:</i> {{ userpair_2shothisto_lst[3] }}</p>
+                                <p for='1'><i>Sentence 2:</i> {{ userpair_2shothisto_lst[4] }}</p>
+                                <input name="1" type="radio" id="11" value="1" required>
+                                <label for='11'>1</label>
+
+                                <input name="1" type="radio" id="12" value="2">
+                                <label for='12'>2</label>
+
+                                <input name="1" type="radio" id="13" value="3">
+                                <label for='13'>3</label>
+
+                                <input name="1" type="radio" id="14" value="4">
+                                <label for='14'>4</label>
+
+                                <input name="1" type="radio" id="15" value="5">
+                                <label for='15'>5</label>
+
+                                <input name="1" type="radio" id="16" value="6">
+                                <label for='16'>6</label>
+
+                            </div>
+                        </div>
+
+                        <br>
+                        <hr>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p for='2'><i>Sentence 1:</i> {{ userpair_2shothisto_lst[5] }}</p>
+                                <p for='2'><i>Sentence 2:</i> {{ userpair_2shothisto_lst[6] }}</p>
+                                <input name="2" type="radio" id="21" value="1" required>
+                                <label for='21'>1</label>
+
+                                <input name="2" type="radio" id="22" value="2">
+                                <label for='22'>2</label>
+
+                                <input name="2" type="radio" id="23" value="3">
+                                <label for='23'>3</label>
+
+                                <input name="2" type="radio" id="24" value="4">
+                                <label for='24'>4</label>
+
+                                <input name="2" type="radio" id="25" value="5">
+                                <label for='25'>5</label>
+
+                                <input name="2" type="radio" id="26" value="6">
+                                <label for='26'>6</label>
+
+
+                            </div>
+                        </div>
+
+                        <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="3"><i>Sentence 1:</i> {{ userpair_2shothisto_lst[7] }}</p>
+                            <p for="3"><i>Sentence 2:</i> {{ userpair_2shothisto_lst[8] }}</p>
+                            <input name="3" type="radio" id="31" value="1" data-error="#e4" required>
+                            <label for="31">1</label>
+
+                            <input name="3" type="radio" id="32" value="2">
+                            <label for="32">2</label>
+
+                            <input name="3" type="radio" id="33" value="3">
+                            <label for="33">3</label>
+
+                            <input name="3" type="radio" id="34" value="4">
+                            <label for="34">4</label>
+
+                            <input name="3" type="radio" id="35" value="5">
+                            <label for="35">5</label>
+
+                            <input name="3" type="radio" id="36" value="6">
+                            <label for="36">6</label>
+
+
+                        </div>
+                     </div>
+                        <br>
+                        <hr>
+                                                <div class="row">
+                        <div class="input-field col s12">
+                            <p for="4"><i>Sentence 1:</i> {{ userpair_2shothisto_lst[9] }}</p>
+                            <p for="4"><i>Sentence 2:</i> {{ userpair_2shothisto_lst[10] }}</p>
+                            <input name="4" type="radio" id="41" value="1" data-error="#e4" required>
+                            <label for="41">1</label>
+
+                            <input name="4" type="radio" id="42" value="2">
+                            <label for="42">2</label>
+
+                            <input name="4" type="radio" id="43" value="3">
+                            <label for="43">3</label>
+
+                            <input name="4" type="radio" id="44" value="4">
+                            <label for="44">4</label>
+
+                            <input name="4" type="radio" id="45" value="5">
+                            <label for="45">5</label>
+
+                            <input name="4" type="radio" id="46" value="6">
+                            <label for="46">6</label>
+
+                        </div>
+                                                </div>
+                        <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="5"><i>Sentence 1:</i> {{ userpair_2shotnohisto_lst[5] }}</p>
+                            <p for="5"><i>Sentence 2:</i> {{ userpair_2shotnohisto_lst[6] }}</p>
+                            <input name="5" type="radio" id="51" value="1" data-error="#e4" required>
+                            <label for="51">1</label>
+
+                            <input name="5" type="radio" id="52" value="2">
+                            <label for="52">2</label>
+
+                            <input name="5" type="radio" id="53" value="3">
+                            <label for="53">3</label>
+
+                            <input name="5" type="radio" id="54" value="4">
+                            <label for="54">4</label>
+
+                            <input name="5" type="radio" id="55" value="5">
+                            <label for="55">5</label>
+
+                            <input name="5" type="radio" id="56" value="6">
+                            <label for="56">6</label>
+
+
+                        </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="6"><i>Sentence 1:</i> {{ userpair_2shotnohisto_lst[7] }}</p>
+                            <p for="6"><i>Sentence 2:</i> {{ userpair_2shotnohisto_lst[8] }}</p>
+                            <input name="6" type="radio" id="61" value="1" data-error="#e4" required>
+                            <label for="61">1</label>
+
+                            <input name="6" type="radio" id="62" value="2">
+                            <label for="62">2</label>
+
+                            <input name="6" type="radio" id="63" value="3">
+                            <label for="63">3</label>
+
+                            <input name="6" type="radio" id="64" value="4">
+                            <label for="64">4</label>
+
+                            <input name="6" type="radio" id="65" value="5">
+                            <label for="65">5</label>
+
+                            <input name="6" type="radio" id="66" value="6">
+                            <label for="66">6</label>
+
+
+                        </div>
+                        </div>
+
+                        <br>
+                        <hr>
+
+                        <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="7"><i>Sentence 1:</i> {{ userpair_2shotnohisto_lst[9] }}</p>
+                            <p for="7"><i>Sentence 2:</i> {{ userpair_2shotnohisto_lst[10] }}</p>
+                            <input name="7" type="radio" id="71" value="1" data-error="#e4" required>
+                            <label for="71">1</label>
+
+                            <input name="7" type="radio" id="72" value="2">
+                            <label for="72">2</label>
+
+                            <input name="7" type="radio" id="73" value="3">
+                            <label for="73">3</label>
+
+                            <input name="7" type="radio" id="74" value="4">
+                            <label for="74">4</label>
+
+                            <input name="7" type="radio" id="75" value="5">
+                            <label for="75">5</label>
+
+                            <input name="7" type="radio" id="76" value="6">
+                            <label for="76">6</label>
+
+
+                        </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="8"><i>Sentence 1:</i> {{ userpair_zeroshot_hist_lst[5] }}</p>
+                            <p for="8"><i>Sentence 2:</i> {{ userpair_zeroshot_hist_lst[6] }}</p>
+                            <input name="8" type="radio" id="81" value="1" data-error="#e4" required>
+                            <label for="81">1</label>
+
+                            <input name="8" type="radio" id="82" value="2">
+                            <label for="82">2</label>
+
+                            <input name="8" type="radio" id="83" value="3">
+                            <label for="83">3</label>
+
+                            <input name="8" type="radio" id="84" value="4">
+                            <label for="84">4</label>
+
+                            <input name="8" type="radio" id="85" value="5">
+                            <label for="85">5</label>
+
+                            <input name="8" type="radio" id="86" value="6">
+                            <label for="86">6</label>
+
+
+                        </div>
+                        </div>
+                        <br>
+                        <hr>
+                             <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="9"><i>Sentence 1:</i> {{ userpair_zeroshot_hist_lst[7] }}</p>
+                            <p for="9"><i>Sentence 2:</i> {{ userpair_zeroshot_hist_lst[8] }}</p>
+                            <input name="9" type="radio" id="91" value="1" data-error="#e4" required>
+                            <label for="91">1</label>
+
+                            <input name="9" type="radio" id="92" value="2">
+                            <label for="92">2</label>
+
+                            <input name="9" type="radio" id="93" value="3">
+                            <label for="93">3</label>
+
+                            <input name="9" type="radio" id="94" value="4">
+                            <label for="94">4</label>
+
+                            <input name="9" type="radio" id="95" value="5">
+                            <label for="95">5</label>
+
+                            <input name="9" type="radio" id="96" value="6">
+                            <label for="96">6</label>
+
+
+                        </div>
+                        </div>
+                        <br>
+                        <hr>
+                             <br>
+                        <hr>
+                        <div class="row">
+                        <div class="input-field col s12">
+                            <p for="10"><i>Sentence 1:</i> {{ userpair_zeroshot_hist_lst[9] }}</p>
+                            <p for="10"><i>Sentence 2:</i> {{ userpair_zeroshot_hist_lst[10] }}</p>
+                            <input name="10" type="radio" id="101" value="1" data-error="#e4" required>
+                            <label for="101">1</label>
+
+                            <input name="10" type="radio" id="102" value="2">
+                            <label for="102">2</label>
+
+                            <input name="10" type="radio" id="103" value="3">
+                            <label for="103">3</label>
+
+                            <input name="10" type="radio" id="104" value="4">
+                            <label for="104">4</label>
+
+                            <input name="10" type="radio" id="105" value="5">
+                            <label for="105">5</label>
+
+                            <input name="10" type="radio" id="106" value="6">
+                            <label for="106">6</label>
+
+
+                        </div>
+                        </div>
+
+                        <br>
+                        <hr>
+                        <!-- <div class="row justify-content-center">
+                          <div class="input-field col m6 s12" >
+                            <button type="submit" class="waves-effect waves-light btn-large">Submit</button>
+                          </div>
+                        </div> -->
+
+                        <div style="text-align: center;">
+                            <button type="submit" class="waves-effect waves-light btn-large">Submit</button>
+                        </div>
+
+                    </form>
+                    Disclaimer: This data is solely for research purpose. You may optionally add your name, which will
+                    be added to our contributor list when this dataset will be published.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.min.js"></script>
+
+    </body>
+
+    </html>
